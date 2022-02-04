@@ -10,3 +10,19 @@ body {
 	font-family: "Mulish", sans-serif;
 	line-height: 1.2;
 }
+
+// UTILITY CLASSES
+input {
+	border: none;
+	outline: none;
+	padding: 15px;
+	border-radius: 0.5rem;
+}
+// !background class
+.bg_light {
+	background-color: $light;
+}
+// * border class
+.border_light {
+	border: 1px solid $light;
+}

@@ -1,13 +1,21 @@
 import React from "react";
-
+import Header from "./components/Header";
+import MainArea from "./modules/main/Index";
 export default function App() {
 	return (
 		<div>
 			{/*  HEADER */}
-			{/* MAIN AREA
-        SECTION + ASIDE
-        */}
-			App
+			<Header />
+			{/* MAIN AREA SECTION + ASIDE
+			 */}
+			<div className="container mt-4">
+				<div className="row">
+					<div className="col-lg-8">
+						<MainArea />
+					</div>
+					<div className="col-lg-4">CheckOut</div>
+				</div>
+			</div>
 		</div>
 	);
 }
