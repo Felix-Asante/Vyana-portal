@@ -18,10 +18,21 @@ input {
 	padding: 15px;
 	border-radius: 0.5rem;
 }
+select {
+	border: 0;
+	outline: none;
+	padding: 8px;
+	border-radius: 8px;
+}
+.border-success {
+	border: 1px solid $success;
+}
 // !background class
 .bg_light {
-	background-color: $light;
+	background-color: $light !important;
+	border-color: $light;
 }
+
 // * border class
 .border_light {
 	border: 1px solid $light;

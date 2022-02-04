@@ -1,4 +1,4 @@
-.main-area {
+.search {
 	position: relative;
 	.search-form {
 		flex: 2;
@@ -53,4 +53,22 @@
 			padding: 0.8rem 0;
 		}
 	}
+}
+// ORDER DETAILS
+.order-info {
+	border: 1px solid #dddfe5;
+	border-radius: 4px;
+	h6,
+	p {
+		margin: 5px 0 0 0;
+		font-size: 14px;
+	}
+	.title {
+		color: #666666;
+	}
+}
+
+// service
+.service {
+	border: 1px solid $light;
 }

@@ -29,7 +29,7 @@ export default function UserSearch() {
 	const [filter, setFilter] = useState(false);
 	const [query, setQuery] = useState("");
 	return (
-		<div className=" border_light rounded p-3 main-area">
+		<div className=" border_light rounded p-3 search">
 			{/*  SEARCH FIELD */}
 			<div className="d-flex align-items-start ">
 				<div className="search-form me-3">
