@@ -10,10 +10,10 @@ export default function App() {
 			 */}
 			<div className="container mt-4">
 				<div className="row">
-					<div className="col-lg-8">
+					<div className="col-lg-9">
 						<MainArea />
 					</div>
-					<div className="col-lg-4">CheckOut</div>
+					<div className="col-lg-3">CheckOut</div>
 				</div>
 			</div>
 		</div>

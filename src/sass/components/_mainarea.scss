@@ -6,7 +6,7 @@
 			position: relative;
 			.search-icon {
 				position: absolute;
-				top: 30%;
+				top: 22%;
 				left: 5%;
 				font-size: 1.2rem;
 				// color: $light;
@@ -71,4 +71,34 @@
 // service
 .service {
 	border: 1px solid $light;
+	.search-input {
+		flex: 2;
+		.input-field {
+			width: 100%;
+			position: relative;
+			.search-icon {
+				position: absolute;
+				top: 22%;
+				left: 5%;
+				font-size: 1.2rem;
+				// color: $light;
+
+				@media screen and (min-width: 991px) {
+					left: 2%;
+				}
+			}
+			input {
+				padding: 0.8rem 2.8rem;
+				width: 100%;
+			}
+		}
+	}
+	.service-card {
+		border-radius: 8px;
+		min-height: 133px;
+		h5 {
+			font-size: 1rem;
+			font-weight: bold;
+		}
+	}
 }

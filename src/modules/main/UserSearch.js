@@ -35,7 +35,7 @@ export default function UserSearch() {
 				<div className="search-form me-3">
 					<form>
 						<div className="input-field d-flex align-items-center">
-							<SearchOutlined className="search-icon" />
+							<img src="/searchh.svg" alt="" className="search-icon" />
 
 							<input type="text" className="bg_light" />
 						</div>
