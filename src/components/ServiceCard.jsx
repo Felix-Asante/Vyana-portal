@@ -11,7 +11,10 @@ export default function ServiceCard({ service }) {
 	}`;
 	return (
 		<div className="service-cards">
-			<div className={serviceCardClasses} onClick={() => setIsSelected(true)}>
+			<div
+				className={serviceCardClasses}
+				onClick={() => setIsSelected(!isSelected)}
+			>
 				<h5>{service.name}</h5>
 
 				{service.subtitle && (
@@ -19,8 +22,9 @@ export default function ServiceCard({ service }) {
 				)}
 				<div className="d-flex justify-content-center align-items-center">
 					<p className="text-center me-4 pt-3">RD${service.price}</p>
-
-					<img src="/clock.svg" alt="clock" className="service-card-clock" />
+					{isSelected && (
+						<img src="/clock.svg" alt="clock" className="service-card-clock" />
+					)}
 				</div>
 			</div>
 

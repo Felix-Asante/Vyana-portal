@@ -11,7 +11,12 @@ body {
 	line-height: 1.2;
 }
 a {
+	color: $success;
 	text-decoration: none;
+
+	&:hover {
+		color: $success;
+	}
 }
 
 // UTILITY CLASSES
@@ -27,6 +32,10 @@ select {
 	padding: 8px;
 	border-radius: 8px;
 }
+label {
+	display: block;
+	margin-bottom: 9px;
+}
 .cursor {
 	cursor: pointer;
 }
@@ -40,11 +49,24 @@ select {
 .text_light {
 	color: #bdbdbd;
 }
-
+.text_lighter {
+	color: #666666;
+}
+// BUTTON CLASSES
+._btn {
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	padding: 12px;
+}
+.btn_success {
+	background-color: $success;
+	color: #fff;
+}
 // * border class
 .border_light {
 	border: 1px solid $light;
 }
 .border-success {
-	border: 1px solid $success;
+	border: 1.5px solid $success;
 }
