@@ -1,58 +1,68 @@
 import React, { useState } from "react";
 import ServiceCard from "../../components/ServiceCard";
 const services = [
-	{ name: "Entrenamiento Personal", price: "2500" },
-	{ name: "Entrenamiento Personal", price: "2500" },
+	{ id: 1, name: "Entrenamiento Personal", price: 2500 },
+	{ id: 2, name: "Entrenamiento Personal", price: 2500 },
 
 	{
+		id: 3,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 4,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 5,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 6,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 7,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 8,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 9,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 10,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 11,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 	{
+		id: 12,
 		name: "Virtual Entrenamiento personal",
 		subtitle: "12 x mes (Individual)",
-		price: "2500",
+		price: 2500,
 	},
 ];
 export default function Service() {
@@ -79,9 +89,9 @@ export default function Service() {
 						</form>
 					</div>
 				</div>
-				<div class="dropdown">
+				<div className="dropdown">
 					<button
-						class="btn bg_light dropdown-toggle p-2 border-success"
+						className="btn bg_light dropdown-toggle p-2 border-success"
 						type="button"
 						id="dropdownMenuButton2"
 						data-bs-toggle="dropdown"
@@ -90,21 +100,21 @@ export default function Service() {
 						{selectedOption}
 					</button>
 					<ul
-						class="dropdown-menu bg_light"
+						className="dropdown-menu bg_light"
 						aria-labelledby="dropdownMenuButton2"
 					>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 2")}>
-							<a class="dropdown-item" href="#">
+							<a className="dropdown-item" href="#">
 								Fisioterapia 2
 							</a>
 						</li>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 3")}>
-							<a class="dropdown-item" href="#">
+							<a className="dropdown-item" href="#">
 								Fisioterapia 3
 							</a>
 						</li>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 4")}>
-							<a class="dropdown-item" href="#">
+							<a className="dropdown-item" href="#">
 								Fisioterapia 4
 							</a>
 						</li>

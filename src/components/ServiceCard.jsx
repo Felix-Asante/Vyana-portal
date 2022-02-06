@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { useServiceContext } from "../context/service-context";
 
 export default function ServiceCard({ service }) {
 	const [isSelected, setIsSelected] = useState(false);
 	const [close, setClose] = useState(false);
 
+	const addServiceHandler = () => {
+		setIsSelected(!isSelected);
+		useServiceContext.addItem(service);
+	};
 	const serviceCardClasses = `${
 		isSelected
 			? "border-success bg_light p-2 service-card text-center mb-2 "
@@ -11,10 +16,7 @@ export default function ServiceCard({ service }) {
 	}`;
 	return (
 		<div className="service-cards">
-			<div
-				className={serviceCardClasses}
-				onClick={() => setIsSelected(!isSelected)}
-			>
+			<div className={serviceCardClasses} onClick={addServiceHandler}>
 				<h5>{service.name}</h5>
 
 				{service.subtitle && (

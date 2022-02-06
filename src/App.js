@@ -1,10 +1,11 @@
 import React from "react";
 import Header from "./components/Header";
+import ServiceProvider from "./context/service-context";
 import Checkout from "./modules/checkout/Checkout";
 import MainArea from "./modules/main/Index";
 export default function App() {
 	return (
-		<div>
+		<ServiceProvider>
 			{/*  HEADER */}
 			<Header />
 			{/* MAIN AREA SECTION + ASIDE
@@ -19,6 +20,6 @@ export default function App() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</ServiceProvider>
 	);
 }
