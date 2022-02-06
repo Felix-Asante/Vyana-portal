@@ -1,8 +1,10 @@
 import React from "react";
+import { useServiceContext } from "../../context/service-context";
 import Service from "./Service";
 import UserSearch from "./UserSearch";
 
 export default function Index() {
+	const { itemSelected } = useServiceContext();
 	return (
 		<div>
 			<UserSearch />
@@ -31,7 +33,7 @@ export default function Index() {
 					</div>
 					<div className="selected-service">
 						<p className="title">Servicios seleccionados</p>
-						<h6 className="text-success">2</h6>
+						<h6 className="text-success">{itemSelected.length}</h6>
 					</div>
 				</div>
 			</div>

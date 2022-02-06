@@ -1,8 +1,10 @@
 import React from "react";
 import { Switch } from "antd";
 import SelectedItemCheckout from "../../components/SelectedItemCheckout";
-
+import { useServiceContext } from "../../context/service-context";
 export default function Checkout() {
+	const { total, itemSelected } = useServiceContext();
+
 	return (
 		<div className="checkout p-3 ">
 			<div className="total">
@@ -10,7 +12,7 @@ export default function Checkout() {
 					<p className="text_light">Total</p>
 					<p className="text_light">Order №070490</p>
 				</div>
-				<h1 className="fw-bold mb-3">RD$5,000</h1>
+				<h1 className="fw-bold mb-3">RD${total}</h1>
 				<div className="form">
 					<div className="discount">
 						<label htmlFor="discount">Descuento</label>
@@ -58,8 +60,9 @@ export default function Checkout() {
 						<Switch />
 					</div>
 					{/* SELECTED ITEMS */}
-					<SelectedItemCheckout />
-					<SelectedItemCheckout />
+					{itemSelected.map((item) => (
+						<SelectedItemCheckout item={item} key={item.id} />
+					))}
 
 					{/* BOTTOM INPUT FIELD */}
 					<input

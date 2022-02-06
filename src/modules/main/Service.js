@@ -68,8 +68,7 @@ const services = [
 export default function Service() {
 	const [selectedOption, setSelectedOption] = useState("Fisioterapia 1");
 	// const [toggleSelect, setToggleSelect] = useState(true);
-	const optionsChangeHandler = (option, e) => {
-		e.preventDefault();
+	const optionsChangeHandler = (option) => {
 		setSelectedOption(option);
 	};
 	return (
@@ -103,6 +102,11 @@ export default function Service() {
 						className="dropdown-menu bg_light"
 						aria-labelledby="dropdownMenuButton2"
 					>
+						<li onClick={() => optionsChangeHandler("Fisioterapia 1")}>
+							<a className="dropdown-item" href="#">
+								Fisioterapia 1
+							</a>
+						</li>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 2")}>
 							<a className="dropdown-item" href="#">
 								Fisioterapia 2

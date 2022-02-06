@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useServiceContext } from "../context/service-context";
 
 export default function ServiceCard({ service }) {
 	const [isSelected, setIsSelected] = useState(false);
 	const [close, setClose] = useState(false);
+	const { addItem, modify, itemSelected } = useServiceContext();
+	const serviceSelected = itemSelected.some((item) => item.id === service.id);
+
+	useEffect(() => {
+		if (!serviceSelected) {
+			setIsSelected(false);
+		}
+	});
 
 	const addServiceHandler = () => {
-		setIsSelected(!isSelected);
-		useServiceContext.addItem(service);
+		setIsSelected(true);
+		service.qty = 1;
+		addItem(service);
 	};
 	const serviceCardClasses = `${
-		isSelected
+		isSelected && serviceSelected
 			? "border-success bg_light p-2 service-card text-center mb-2 "
 			: "bg_light p-2 service-card text-center mb-2"
 	}`;
