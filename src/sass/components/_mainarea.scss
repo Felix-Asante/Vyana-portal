@@ -16,13 +16,13 @@
 				}
 			}
 			input {
-				padding: 0.8rem 3rem;
+				padding: 1rem 3rem;
 				width: 100%;
 			}
 		}
 	}
 	.filter-button {
-		width: 50px;
+		width: 60px;
 		cursor: pointer;
 	}
 	.query {
@@ -88,17 +88,49 @@
 				}
 			}
 			input {
-				padding: 0.8rem 2.8rem;
+				padding: 1rem 2.8rem;
 				width: 100%;
 			}
 		}
 	}
-	.service-card {
-		border-radius: 8px;
-		min-height: 133px;
-		h5 {
-			font-size: 1rem;
-			font-weight: bold;
+	.service-cards {
+		position: relative;
+		.service-card {
+			border-radius: 8px;
+			min-height: 133px;
+			cursor: pointer;
+			h5 {
+				font-size: 1rem;
+				font-weight: bold;
+			}
+		}
+		.form {
+			position: absolute;
+			top: -50%;
+			left: 100%;
+			z-index: 5;
+			width: 350px;
+			border: 1px solid #bdbdbd;
+			border-radius: 8px;
+			// transform: translate(-50%, -50%);
+			.qty {
+				height: 40px;
+			}
+			.control {
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				text-align: center;
+				border: none;
+				cursor: pointer;
+			}
+			.inputs {
+				input {
+					margin-bottom: 10px;
+					width: 100%;
+					border: 1.5px solid #bdbdbd;
+				}
+			}
 		}
 	}
 }

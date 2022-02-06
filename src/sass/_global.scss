@@ -10,6 +10,9 @@ body {
 	font-family: "Mulish", sans-serif;
 	line-height: 1.2;
 }
+a {
+	text-decoration: none;
+}
 
 // UTILITY CLASSES
 input {
@@ -24,16 +27,24 @@ select {
 	padding: 8px;
 	border-radius: 8px;
 }
-.border-success {
-	border: 1px solid $success;
+.cursor {
+	cursor: pointer;
 }
+
 // !background class
 .bg_light {
 	background-color: $light !important;
 	border-color: $light;
 }
+// text colors
+.text_light {
+	color: #bdbdbd;
+}
 
 // * border class
 .border_light {
 	border: 1px solid $light;
+}
+.border-success {
+	border: 1px solid $success;
 }

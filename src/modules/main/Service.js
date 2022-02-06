@@ -63,7 +63,7 @@ export default function Service() {
 		setSelectedOption(option);
 	};
 	return (
-		<div className="service p-4 rounded">
+		<div className="service p-4 rounded mb-4">
 			<div className="filter d-flex justify-content-between align-items-center">
 				<div className="search-input me-4">
 					<div className="d-flex align-items-center">
