@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useServiceContext } from "../context/service-context";
+import { DatePicker, TimePicker } from "antd";
 
 export default function ServiceCard({ service }) {
 	const [isSelected, setIsSelected] = useState(false);
 	const [close, setClose] = useState(false);
-	const { addItem, modify, itemSelected } = useServiceContext();
+	const { addItem, itemSelected } = useServiceContext();
 	const serviceSelected = itemSelected.some((item) => item.id === service.id);
 
 	useEffect(() => {
 		if (!serviceSelected) {
 			setIsSelected(false);
 		}
-	});
+	}, [serviceSelected]);
 
 	const addServiceHandler = () => {
 		setIsSelected(true);
@@ -63,12 +64,18 @@ export default function ServiceCard({ service }) {
 
 					<div className="inputs mt-2">
 						<input type="text" placeholder={`RD$${service.price}`} readOnly />
-						<input type="text" placeholder="Fecha DD/MM/AA" />
-						<input type="text" placeholder="Número de sesiones" />
-						<input type="text" placeholder="Duración de la clase  H/ M " />
-						<a href="#" className="text-success fw-bold- text-center d-block">
+						<DatePicker bordered={false} placeholder="Fecha DD/MM/AA" />
+						{/* <input type="text" placeholder="Fecha DD/MM/AA" /> */}
+						<input type="number" placeholder="Número de sesiones" />
+						{/* <input type="text" placeholder="Duración de la clase  H/ M " /> */}
+						<TimePicker
+							placeholder="Duración de la clase  H/ M"
+							bordered={false}
+						/>
+
+						<p className="text-success fw-bold- text-center d-block cursor">
 							Guardar
-						</a>
+						</p>
 					</div>
 				</div>
 			)}

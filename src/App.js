@@ -1,11 +1,17 @@
 import React from "react";
 import Header from "./components/Header";
-import ServiceProvider from "./context/service-context";
+import { useFilterContext } from "./context/filter-context";
 import Checkout from "./modules/checkout/Checkout";
 import MainArea from "./modules/main/Index";
 export default function App() {
+	const { filter, filterHandler } = useFilterContext();
+
+	const closeFilterHandler = () => {
+		if (!filter) return;
+		filterHandler();
+	};
 	return (
-		<ServiceProvider>
+		<div onClick={() => closeFilterHandler()}>
 			{/*  HEADER */}
 			<Header />
 			{/* MAIN AREA SECTION + ASIDE
@@ -20,6 +26,6 @@ export default function App() {
 					</div>
 				</div>
 			</div>
-		</ServiceProvider>
+		</div>
 	);
 }

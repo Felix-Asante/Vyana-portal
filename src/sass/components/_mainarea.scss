@@ -126,9 +126,17 @@
 			}
 			.inputs {
 				input {
-					margin-bottom: 10px;
 					width: 100%;
-					border: 1.5px solid #bdbdbd;
+				}
+				& > input,
+				.ant-picker.ant-picker-borderless {
+					margin-bottom: 10px;
+					border: 1.5px solid #bdbdbd !important;
+				}
+
+				.ant-picker.ant-picker-borderless {
+					padding: 14px;
+					border-radius: 0.5rem;
 				}
 			}
 		}

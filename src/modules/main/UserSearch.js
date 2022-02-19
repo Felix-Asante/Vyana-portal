@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import UserSearchResultItem from "../../components/UserSearchResultItem";
-import { SearchOutlined } from "@ant-design/icons";
-
+import { useFilterContext } from "../../context/filter-context";
 const tableData = [
 	{
 		nombre: "Angel",
@@ -26,8 +25,9 @@ const tableData = [
 	},
 ];
 export default function UserSearch() {
-	const [filter, setFilter] = useState(false);
 	const [query, setQuery] = useState("");
+	const { filter, filterHandler } = useFilterContext();
+
 	return (
 		<div className=" border_light rounded p-3 search">
 			{/*  SEARCH FIELD */}
@@ -84,7 +84,7 @@ export default function UserSearch() {
 					src="/filter-button.svg"
 					alt="filter"
 					className="filter-button"
-					onClick={() => setFilter(!filter)}
+					onClick={() => filterHandler()}
 				/>
 			</div>
 			{/* ! FILTER */}

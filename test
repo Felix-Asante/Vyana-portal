@@ -1,0 +1,9 @@
+1. In the part that says “Modo de pago” mask the input data when the user enters it (can be masked with ****).
+[x]2. For the rectangle with the words “Fecha de factura” (below total), implement a datepicker.
+[x]3.  Increase the height of the header.
+[x]4. Increase the size of the logo.
+[x]5. Make the search filter dismiss after clicking outside.
+[x]6. The number fields should not accept text input.
+[x]7. All date fields should have a date picker.
+[x]8. For the part “Agregar nota” add a modal with the option of a text area input.
+[x]9. Please remove the error in the console that says “findDOMNode is depecated’, as well as any other warning that shows up.

@@ -1,15 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.min.js";
-
+import ServiceProvider from "./context/service-context";
+import FilterProvider from "./context/filter-context";
 import "./sass/main.scss";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<ServiceProvider>
+			<FilterProvider>
+				<App />
+			</FilterProvider>
+		</ServiceProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

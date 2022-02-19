@@ -20,11 +20,16 @@ a {
 }
 
 // UTILITY CLASSES
-input {
+input,
+textarea {
 	border: none;
 	outline: none;
 	padding: 15px;
 	border-radius: 0.5rem;
+}
+textarea {
+	width: 100%;
+	border: 1.4px solid #bdbdbd;
 }
 select {
 	border: 0;
@@ -70,3 +75,33 @@ label {
 .border-success {
 	border: 1.5px solid $success;
 }
+.ant-picker.ant-picker-borderless {
+	border: 1.4px solid #bdbdbd !important;
+	padding: 8px;
+	width: 100%;
+	margin: 10px 0;
+}
+.ant-btn-primary {
+	background-color: $success;
+	border: 0;
+
+	&:hover {
+		background-color: $success;
+		color: #fff !important;
+	}
+}
+.ant-modal-header,
+.ant-modal-close-x {
+	display: none;
+}
+.ant-btn:hover {
+	color: $success;
+	border-color: $success;
+}
+// .ant-modal-close-x {
+// 	d
+// 	line-height: 20px;
+// 	svg {
+// 		fill: $success;
+// 	}
+// }

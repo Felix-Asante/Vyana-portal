@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ServiceCard from "../../components/ServiceCard";
+
 const services = [
 	{ id: 1, name: "Entrenamiento Personal", price: 2500 },
 	{ id: 2, name: "Entrenamiento Personal", price: 2500 },
@@ -103,24 +104,16 @@ export default function Service() {
 						aria-labelledby="dropdownMenuButton2"
 					>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 1")}>
-							<a className="dropdown-item" href="#">
-								Fisioterapia 1
-							</a>
+							<span clspanssName="dropdown-item">Fisioterapia 1</span>
 						</li>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 2")}>
-							<a className="dropdown-item" href="#">
-								Fisioterapia 2
-							</a>
+							<span className="dropdown-item">Fisioterapia 2</span>
 						</li>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 3")}>
-							<a className="dropdown-item" href="#">
-								Fisioterapia 3
-							</a>
+							<span className="dropdown-item">Fisioterapia 3</span>
 						</li>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 4")}>
-							<a className="dropdown-item" href="#">
-								Fisioterapia 4
-							</a>
+							<span className="dropdown-item">Fisioterapia 4</span>
 						</li>
 					</ul>
 				</div>

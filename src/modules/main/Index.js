@@ -2,7 +2,6 @@ import React from "react";
 import { useServiceContext } from "../../context/service-context";
 import Service from "./Service";
 import UserSearch from "./UserSearch";
-
 export default function Index() {
 	const { itemSelected } = useServiceContext();
 	return (

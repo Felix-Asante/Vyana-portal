@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch } from "antd";
 import SelectedItemCheckout from "../../components/SelectedItemCheckout";
 import { useServiceContext } from "../../context/service-context";
+import { EyeOutlined } from "@ant-design/icons";
+import { DatePicker, Modal } from "antd";
+
 export default function Checkout() {
 	const { total, itemSelected } = useServiceContext();
+	const [modoPage, setModoPage] = useState(null);
+	const [openModal, setOpenModal] = useState(false);
 
 	return (
 		<div className="checkout p-3 ">
@@ -27,11 +32,15 @@ export default function Checkout() {
 						<div className="bg_light px-2 d-flex align-items-center">
 							<img src="/card.svg" alt="card" />
 							<input
-								type="text"
+								type="password"
 								className="bg_light"
 								id="method"
 								placeholder="RD$2,500"
+								onChange={(e) => setModoPage(e.target.value)}
 							/>
+							{modoPage && (
+								<EyeOutlined style={{ color: "#666666", cursor: "pointer" }} />
+							)}
 						</div>
 					</div>
 					<div className="amount mb-2">
@@ -40,7 +49,7 @@ export default function Checkout() {
 							<input
 								type="text"
 								className="bg_light"
-								id="method"
+								id="method2"
 								placeholder="RD$2,500"
 							/>
 						</div>
@@ -65,19 +74,39 @@ export default function Checkout() {
 					))}
 
 					{/* BOTTOM INPUT FIELD */}
-					<input
+					{/* <input
 						type="text"
 						placeholder="Fecha de factura    DD / MM / AA"
 						className="border-light my-3 facture"
+					/> */}
+					<DatePicker
+						bordered={false}
+						placeholder="Fecha de factura    DD / MM / AA"
 					/>
-					<p className="text-center">
-						<a href="#">Agregar nota +</a>
+
+					<p
+						className="text-center text-success cursor"
+						onClick={() => setOpenModal(true)}
+					>
+						Agregar nota +
 					</p>
 					<button className="_btn btn_success mt-5 mx-auto d-block">
 						Procesar pago
 					</button>
 				</div>
 			</div>
+			{/* MODAL THAT DISPLAYS HEN YOU CLICK ON Agregar nota + */}
+			<Modal
+				title=" "
+				style={{ top: 20 }}
+				visible={openModal}
+				onOk={() => setOpenModal(false)}
+				onCancel={() => setOpenModal(false)}
+				okText="Bueno"
+				cancelText="Cancelar"
+			>
+				<textarea name="text"></textarea>
+			</Modal>
 		</div>
 	);
 }
