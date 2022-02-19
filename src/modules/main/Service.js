@@ -104,7 +104,7 @@ export default function Service() {
 						aria-labelledby="dropdownMenuButton2"
 					>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 1")}>
-							<span clspanssName="dropdown-item">Fisioterapia 1</span>
+							<span className="dropdown-item">Fisioterapia 1</span>
 						</li>
 						<li onClick={() => optionsChangeHandler("Fisioterapia 2")}>
 							<span className="dropdown-item">Fisioterapia 2</span>

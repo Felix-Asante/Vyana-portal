@@ -7,7 +7,11 @@ export default function App() {
 	const { filter, filterHandler } = useFilterContext();
 
 	const closeFilterHandler = () => {
+		// return if filter Option is not opened
+		// else it will keep opening the filter options
+		// when any part of the app is clicked
 		if (!filter) return;
+		// else open the filter options
 		filterHandler();
 	};
 	return (

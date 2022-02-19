@@ -1,0 +1,7 @@
+TO SOLVE ISSUE NO.5
+    - I removed the filter and setFilter state from UserSearch component and created a new context state with it.
+    because it's like a global state.
+    -The filter context can be found in the context folder in src.
+    -The part that closes the filter options when opened can be found in App.js[line 14]
+    (<div onClick={() => closeFilterHandler()}>)
+-I have also moved all the contextProvider from app.js to index.js

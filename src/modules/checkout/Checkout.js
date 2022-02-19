@@ -7,9 +7,41 @@ import { DatePicker, Modal } from "antd";
 
 export default function Checkout() {
 	const { total, itemSelected } = useServiceContext();
-	const [modoPage, setModoPage] = useState(null);
+	const [modoPage, setModoPage] = useState(" ");
 	const [openModal, setOpenModal] = useState(false);
+	const [maskedCardNumber, setMaskedCardNumber] = useState(" ");
+	const [previewCardNumber, setPreviewCardNumber] = useState(false);
 
+	console.log(modoPage.length);
+	// MASK CARD NUMBER
+	const maskCreditCardInput = (deleting = false) => {
+		if (deleting) return;
+		modoPage?.split("").forEach(() => {
+			const mask = maskedCardNumber.concat("*");
+
+			setMaskedCardNumber(mask);
+		});
+	};
+
+	// accepting new user input
+	const handleCreditNumberChange = (e) => {
+		const latestInputs = e.target.value.trim().split("");
+		const latestValue = Number(latestInputs[latestInputs.length - 1]);
+		if (isNaN(latestValue)) {
+			return;
+		}
+		setModoPage((prev) => prev.concat(latestValue.toString()));
+		maskCreditCardInput();
+	};
+
+	// DELETE CARD NUMBER
+	const keyPressHandler = (e) => {
+		if (e.keyCode === 8) {
+			setMaskedCardNumber((prev) => prev.slice(0, -1));
+			setModoPage((prev) => prev.slice(0, -1));
+			maskCreditCardInput(true);
+		}
+	};
 	return (
 		<div className="checkout p-3 ">
 			<div className="total">
@@ -32,14 +64,19 @@ export default function Checkout() {
 						<div className="bg_light px-2 d-flex align-items-center">
 							<img src="/card.svg" alt="card" />
 							<input
-								type="password"
+								type="text"
 								className="bg_light"
 								id="method"
 								placeholder="RD$2,500"
-								onChange={(e) => setModoPage(e.target.value)}
+								value={previewCardNumber ? modoPage : maskedCardNumber}
+								onChange={handleCreditNumberChange}
+								onKeyDown={keyPressHandler}
 							/>
-							{modoPage && (
-								<EyeOutlined style={{ color: "#666666", cursor: "pointer" }} />
+							{modoPage > 1 && (
+								<EyeOutlined
+									style={{ color: "#666666", cursor: "pointer" }}
+									onClick={() => setPreviewCardNumber(!previewCardNumber)}
+								/>
 							)}
 						</div>
 					</div>
@@ -47,7 +84,7 @@ export default function Checkout() {
 						<div className="bg_light px-2 d-flex align-items-center">
 							<img src="/dollar.svg" alt="card" />
 							<input
-								type="text"
+								type="number"
 								className="bg_light"
 								id="method2"
 								placeholder="RD$2,500"
