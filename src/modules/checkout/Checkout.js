@@ -12,10 +12,8 @@ export default function Checkout() {
 	const [maskedCardNumber, setMaskedCardNumber] = useState(" ");
 	const [previewCardNumber, setPreviewCardNumber] = useState(false);
 
-	console.log(modoPage.length);
 	// MASK CARD NUMBER
-	const maskCreditCardInput = (deleting = false) => {
-		if (deleting) return;
+	const maskCreditCardInput = () => {
 		modoPage?.split("").forEach(() => {
 			const mask = maskedCardNumber.concat("*");
 
@@ -39,7 +37,7 @@ export default function Checkout() {
 		if (e.keyCode === 8) {
 			setMaskedCardNumber((prev) => prev.slice(0, -1));
 			setModoPage((prev) => prev.slice(0, -1));
-			maskCreditCardInput(true);
+			// maskCreditCardInput(true);
 		}
 	};
 	return (
