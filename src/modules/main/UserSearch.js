@@ -40,14 +40,22 @@ export default function UserSearch() {
 							<input type="text" className="bg_light" />
 						</div>
 					</form>
+					{/* ADDED STOP PROPAGATION TO PREVENT THE CLICK EVENTS ON THE FILTER OPTION */}
+					{/* FROM BUBBLING UP TO THE PARENT WHICH WILL CLOSE THE OPTION */}
 					{filter && (
-						<div className="bg_light p-1 mt-2 query" style={{ height: "70px" }}>
+						<div
+							className="bg_light p-1 mt-2 query"
+							style={{ height: "70px" }}
+							onClick={(e) => e.stopPropagation()}
+						>
 							<div className="d-flex justify-content-around align-items-center h-100">
 								<button
 									className={`btn bg-white me-3 ${
 										query === "nombre" ? "btn-outline-success" : " "
 									}`}
-									onClick={() => setQuery("nombre")}
+									onClick={() => {
+										setQuery("nombre");
+									}}
 								>
 									Nombre
 								</button>
