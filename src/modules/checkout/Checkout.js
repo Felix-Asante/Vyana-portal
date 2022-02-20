@@ -65,7 +65,7 @@ export default function Checkout() {
 								type="text"
 								className="bg_light"
 								id="method"
-								placeholder="RD$2,500"
+								// placeholder="RD$2,500"
 								value={previewCardNumber ? modoPage : maskedCardNumber}
 								onChange={handleCreditNumberChange}
 								onKeyDown={keyPressHandler}
@@ -137,7 +137,7 @@ export default function Checkout() {
 				visible={openModal}
 				onOk={() => setOpenModal(false)}
 				onCancel={() => setOpenModal(false)}
-				okText="Bueno"
+				okText="Agregar"
 				cancelText="Cancelar"
 			>
 				<textarea name="text"></textarea>
